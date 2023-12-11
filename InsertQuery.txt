@@ -1,0 +1,24 @@
+INSERT INTO restaurant VALUES
+(1,'Bandung','special'),
+(2,'Jakarta','special'),
+(3,'Bali','special'),
+(4,'Surabaya','local'),
+(5,'Samarinda','local'),
+(6,'Padang','local')
+
+
+INSERT INTO employee VALUES
+(1,'Andrew',1),
+(2,'Alvin',2),
+(3,'Charles',3),
+(4,'Fred',4),
+(5,'Alek',5),
+(6,'Hendra',6)
+
+
+INSERT INTO msmenu(menuID,name,price,type) VALUES
+(1,'Rendang',10000,'normal')
+
+INSERT INTO msmenu VALUES
+(2,''),
+
