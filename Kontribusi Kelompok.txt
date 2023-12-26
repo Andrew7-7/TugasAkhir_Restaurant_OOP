@@ -1,6 +1,7 @@
 2602086646-Frederick Chandra
-- 
+- ERD
+- Normalisasi
 2602117512 - Charles Widjaja Tjung
-- 
+- Normalisasi
 2602084640-Andrew
-- 
+- Membuat create+insert.sql

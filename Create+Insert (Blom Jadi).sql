@@ -10,7 +10,7 @@ CREATE TABLE MsMenu(
     name varchar(255) not null,
     price int not null,
     type varchar(255) not null,
-    story varchar(255),
+    description varchar(255),
     city varchar(255)
 )
 
@@ -36,13 +36,18 @@ CREATE TABLE Employee(
 )
 
 CREATE TABLE Orders(
-    orderID int PRIMARY KEY,
-    customerID int not null,
+    orderID int,
+    tableTypeID int not null,
+    customerName VARCHAR(255) not null,
     restaurantID int not null,
     tableQuantity int not null,
-    tableType VARCHAR(255) not null,
-    customerQuantity int not null,
+    totalPeople int not null,
+	employeeID int not null,
     status varchar(255) not null,
+	FOREIGN KEY(employeeID) REFERENCES Employee(employeeID),
+	FOREIGN KEY(restaurantID) REFERENCES Restaurant(restaurantID),
+	FOREIGN KEY(tableTypeID) REFERENCES TableTypes(typeID),
+	PRIMARY KEY(orderID,tableTypeID)
 )
 
 INSERT INTO TableTypes(typeID, typeName, capacity) VALUES
