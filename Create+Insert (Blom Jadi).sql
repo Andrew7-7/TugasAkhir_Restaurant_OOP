@@ -75,6 +75,4 @@ INSERT INTO employee VALUES
 INSERT INTO msmenu(menuID,name,price,type) VALUES
 (1,'Rendang',10000,'normal')
 
-
-
 ROLLBACK
