@@ -1,5 +1,3 @@
-USE RestoManagement
-
 CREATE TABLE MrLocation(
 LocationID CHAR(5) NOT NULL PRIMARY KEY CHECK (LocationID LIKE 'LI[0-9][0-9][0-9]'),
 Location VARCHAR(50) NOT NULL,
@@ -55,6 +53,8 @@ INSERT INTO MrLocation(LocationID, Location, RestaurantType) VALUES ('LI001', 'J
 INSERT INTO MrLocation(LocationID, Location, RestaurantType) VALUES ('LI002', 'Surabaya', 'Local')
 INSERT INTO MrLocation(LocationID, Location, RestaurantType) VALUES ('LI003', 'Padang', 'Local')
 INSERT INTO MrLocation(LocationID, Location, RestaurantType) VALUES ('LI004', 'Bandung', 'Main')
+INSERT INTO MrLocation(LocationID, Location, RestaurantType) VALUES ('LI005', 'Samarinda', 'Local')
+INSERT INTO MrLocation(LocationID, Location, RestaurantType) VALUES ('LI006', 'Bali', 'Main')
 
 INSERT INTO MrMenu(MenuID, MenuName, Price, AvailableOn, OriginLocation, CharacteristicOrDescription) VALUES ('MN001', 'Wagyu A5', 1000000, 'LaperAh Tanjung Duren', NULL, 'Di lereng pegunungan Jepang, Wagyu A5 terkenal dengan marbling luar biasa, tekstur lembut seperti awan, dan cita rasa mentega yang melumer di lidah, memberikan pengalaman kuliner mewah yang tak terlupakan.')
 INSERT INTO MrMenu(MenuID, MenuName, Price, AvailableOn, OriginLocation, CharacteristicOrDescription) VALUES ('MN002', 'Rawon', 250000, 'LaperAh Tunjungan Plaza', 'Banyuwangi', 'Rawon adalah sup tradisional Jawa Timur yang kaya rempah, berwarna hitam pekat karena penggunaan kluwek, dengan cita rasa gurih, pedas, dan lezat.')
@@ -73,11 +73,15 @@ INSERT INTO MrBranch(BranchID, LocationID, BranchName) VALUES ('BR001', 'LI001',
 INSERT INTO MrBranch(BranchID, LocationID, BranchName) VALUES ('BR002', 'LI002', 'LaperAh Tunjungan Plaza')
 INSERT INTO MrBranch(BranchID, LocationID, BranchName) VALUES ('BR003', 'LI003', 'LaperAh Bukittinggi')
 INSERT INTO MrBranch(BranchID, LocationID, BranchName) VALUES ('BR004', 'LI004', 'LaperAh Alun-alun Bandung')
+INSERT INTO MrBranch(BranchID, LocationID, BranchName) VALUES ('BR005', 'LI005', 'LaperAh Palaran')
+INSERT INTO MrBranch(BranchID, LocationID, BranchName) VALUES ('BR006', 'LI006', 'LaperAh Kuta')
 
 INSERT INTO MrEmployee(EmployeeID, BranchID, EmployeeName) VALUES ('EM001', 'BR001', 'Nobita')
 INSERT INTO MrEmployee(EmployeeID, BranchID, EmployeeName) VALUES ('EM002', 'BR002', 'Taylor')
 INSERT INTO MrEmployee(EmployeeID, BranchID, EmployeeName) VALUES ('EM003', 'BR003', 'Teguh')
 INSERT INTO MrEmployee(EmployeeID, BranchID, EmployeeName) VALUES ('EM004', 'BR004', 'Eli')
+INSERT INTO MrEmployee(EmployeeID, BranchID, EmployeeName) VALUES ('EM003', 'BR005', 'Joko')
+INSERT INTO MrEmployee(EmployeeID, BranchID, EmployeeName) VALUES ('EM004', 'BR006', 'Reno')
 
 INSERT INTO TransactionDetail(OrderID, EmployeeID, ReservedTime, ReservationStatus) VALUES ('OD001', 'EM001', '2020-01-12 11:00:00', 'Finalized')
 INSERT INTO TransactionDetail(OrderID, EmployeeID, ReservedTime, ReservationStatus) VALUES ('OD002', 'EM002', '2020-01-13 11:00:00', 'Finalized')
