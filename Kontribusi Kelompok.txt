@@ -3,5 +3,6 @@
 - Normalisasi
 2602117512 - Charles Widjaja Tjung
 - Normalisasi
+- Membuat create+insert.sql
 2602084640-Andrew
 - Membuat create+insert.sql
