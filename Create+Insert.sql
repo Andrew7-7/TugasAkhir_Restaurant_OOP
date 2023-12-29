@@ -88,6 +88,13 @@ INSERT INTO MsLocation(Location, RestaurantType) VALUES ('Bandung', 'Main');
 INSERT INTO MsLocation(Location, RestaurantType) VALUES ('Samarinda', 'Local');
 INSERT INTO MsLocation(Location, RestaurantType) VALUES ('Bali', 'Main');
 
+INSERT INTO MsBranch(LocationID, BranchName) VALUES (1, 'LaperAh Tanjung Duren');
+INSERT INTO MsBranch(LocationID, BranchName) VALUES (2, 'LaperAh Tunjungan Plaza');
+INSERT INTO MsBranch(LocationID, BranchName) VALUES (3, 'LaperAh Bukittinggi');
+INSERT INTO MsBranch(LocationID, BranchName) VALUES (4, 'LaperAh Alun-alun Bandung');
+INSERT INTO MsBranch(LocationID, BranchName) VALUES (5, 'LaperAh Palaran');
+INSERT INTO MsBranch(LocationID, BranchName) VALUES (6, 'LaperAh Kuta');
+
 INSERT INTO MsMenu(MenuName, Price, AvailableOn, OriginLocation, CharacteristicOrDescription) VALUES ('Wagyu A5', 1000000, 'LaperAh Tanjung Duren', NULL, 'Di lereng pegunungan Jepang, Wagyu A5 terkenal dengan marbling luar biasa, tekstur lembut seperti awan, dan cita rasa mentega yang melumer di lidah, memberikan pengalaman kuliner mewah yang tak terlupakan.');
 INSERT INTO MsMenu(MenuName, Price, AvailableOn, OriginLocation, CharacteristicOrDescription) VALUES ('Rawon', 250000, 'LaperAh Tunjungan Plaza', 'Banyuwangi', 'Rawon adalah sup tradisional Jawa Timur yang kaya rempah, berwarna hitam pekat karena penggunaan kluwek, dengan cita rasa gurih, pedas, dan lezat.');
 INSERT INTO MsMenu(MenuName, Price, AvailableOn, OriginLocation, CharacteristicOrDescription) VALUES ('Nasi Goreng Kampung', 100000, 'LaperAh Tunjungan Plaza', NULL, NULL);
@@ -122,13 +129,6 @@ INSERT INTO MsMenu(MenuName, Price, AvailableOn, OriginLocation, CharacteristicO
 INSERT INTO MsTableType(TableType, MaxTableLoad) VALUES ('Romantic', 2);
 INSERT INTO MsTableType(TableType, MaxTableLoad) VALUES ('General', 4);
 INSERT INTO MsTableType(TableType, MaxTableLoad) VALUES ('Family', 10);
-
-INSERT INTO MsBranch(LocationID, BranchName) VALUES (1, 'LaperAh Tanjung Duren');
-INSERT INTO MsBranch(LocationID, BranchName) VALUES (2, 'LaperAh Tunjungan Plaza');
-INSERT INTO MsBranch(LocationID, BranchName) VALUES (3, 'LaperAh Bukittinggi');
-INSERT INTO MsBranch(LocationID, BranchName) VALUES (4, 'LaperAh Alun-alun Bandung');
-INSERT INTO MsBranch(LocationID, BranchName) VALUES (5, 'LaperAh Palaran');
-INSERT INTO MsBranch(LocationID, BranchName) VALUES (6, 'LaperAh Kuta');
 
 INSERT INTO MsEmployee(BranchID, EmployeeName, EmployeeEmail, EmployeePassword) VALUES (1, 'Nobita','Nobita@gmail.com', 'Nobita123');
 INSERT INTO MsEmployee(BranchID, EmployeeName, EmployeeEmail, EmployeePassword) VALUES (2, 'Taylor','Taylor@gmail.com', 'Taylor123');
