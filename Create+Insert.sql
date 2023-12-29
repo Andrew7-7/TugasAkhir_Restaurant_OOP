@@ -60,15 +60,15 @@ CREATE TABLE TransactionHeader (
 DELIMITER //
 
 CREATE TRIGGER CheckAvailableOn
-BEFORE INSERT ON MrMenu
+BEFORE INSERT ON MsMenu
 FOR EACH ROW
 BEGIN
     DECLARE branch_count INT;
 
     SELECT COUNT(*)
     INTO branch_count
-    FROM MrMenu AS M
-    LEFT JOIN MrBranch AS B ON NEW.AvailableOn = B.BranchName
+    FROM MsMenu AS M
+    LEFT JOIN MsBranch AS B ON NEW.AvailableOn = B.BranchName
     WHERE NEW.AvailableOn IS NOT NULL AND B.BranchID IS NULL;
 
     IF branch_count > 0 THEN
