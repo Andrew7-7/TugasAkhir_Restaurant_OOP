@@ -1,4 +1,4 @@
-package order;
+package model;
 
 //blm tau mau pake atau engga
 

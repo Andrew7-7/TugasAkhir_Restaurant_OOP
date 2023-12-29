@@ -1,4 +1,4 @@
-package restaurant;
+package model;
 
 public class Restaurant {
 	private Integer restaurantID;
