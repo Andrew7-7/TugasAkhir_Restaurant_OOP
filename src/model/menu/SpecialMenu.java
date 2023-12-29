@@ -1,4 +1,4 @@
-package menu;
+package model.menu;
 
 public class SpecialMenu extends Menu{
 	private String story;

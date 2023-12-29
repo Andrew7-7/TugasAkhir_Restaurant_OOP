@@ -1,4 +1,4 @@
-package menu;
+package model.menu;
 
 public class Menu {
 	private Integer menuID, price;

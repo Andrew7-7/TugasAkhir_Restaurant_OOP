@@ -1,4 +1,4 @@
-package menu;
+package model.menu;
 
 public class LocalSpecial extends SpecialMenu{
 	private String city;
