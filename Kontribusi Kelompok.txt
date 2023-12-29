@@ -1,6 +1,7 @@
 2602086646-Frederick Chandra
 - ERD
 - Normalisasi
+- Membuat JBDC
 2602117512 - Charles Widjaja Tjung
 - Normalisasi
 - Membuat create+insert.sql
