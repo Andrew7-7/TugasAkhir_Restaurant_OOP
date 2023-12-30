@@ -1,16 +1,19 @@
 package model.menu;
 
 public class SpecialMenu extends Menu{
-	private String story;
-	public SpecialMenu(Integer id,Integer price, String name,String story) {
-		super(id,price,name);
-		this.story = story;
+	private String Story;
+
+	public SpecialMenu(Integer menuID, Integer price, String name, String availableOn, String story) {
+		super(menuID, price, name, availableOn);
+		Story = story;
 	}
 
-	public synchronized String getStory() {
-		return story;
+	public String getStory() {
+		return Story;
 	}
-	public synchronized void setStory(String story) {
-		this.story = story;
+
+	public void setStory(String story) {
+		Story = story;
 	}
+	
 }

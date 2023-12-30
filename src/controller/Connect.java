@@ -10,7 +10,7 @@ public class Connect {
 	private final String Connect = String.format("jdbc:mysql://%s/%s",host,Database);
 	
 	Connection Connect1;
-	Statement state;
+	public Statement state;
 	ResultSet Result;
 	
 	private static Connect SingleConnect;
@@ -29,13 +29,5 @@ public class Connect {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-	}
-
-	public ResultSet StartQuery(String query) throws SQLException{
-		return state.executeQuery(query);
-	}
-	
-	public void AddMenu(String query) throws SQLException {
-		state.executeUpdate(query);
 	}
 }

@@ -1,30 +1,37 @@
 package model.menu;
 
 public class Menu {
-	private Integer menuID, price;
-	private String name;
-	public Menu(Integer menuID,Integer price, String name) {
-		this.menuID = menuID;
-		this.price = price;
-		this.name = name;
+	private Integer MenuID, Price;
+	private String Name, AvailableOn;
+	public Menu(Integer menuID, Integer price, String name, String availableOn) {
+		super();
+		MenuID = menuID;
+		Price = price;
+		Name = name;
+		AvailableOn = availableOn;
 	}
-	public synchronized Integer getId() {
-		return menuID;
+	public Integer getMenuID() {
+		return MenuID;
 	}
-	public synchronized void setId(Integer id) {
-		this.menuID = id;
+	public void setMenuID(Integer menuID) {
+		MenuID = menuID;
 	}
-	public synchronized Integer getPrice() {
-		return price;
+	public Integer getPrice() {
+		return Price;
 	}
-	public synchronized void setPrice(Integer price) {
-		this.price = price;
+	public void setPrice(Integer price) {
+		Price = price;
 	}
-	public synchronized String getName() {
-		return name;
+	public String getName() {
+		return Name;
 	}
-	public synchronized void setName(String name) {
-		this.name = name;
+	public void setName(String name) {
+		Name = name;
 	}
-
+	public String getAvailableOn() {
+		return AvailableOn;
+	}
+	public void setAvailableOn(String availableOn) {
+		AvailableOn = availableOn;
+	}
 }

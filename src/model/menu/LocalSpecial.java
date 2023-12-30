@@ -1,18 +1,24 @@
 package model.menu;
 
-public class LocalSpecial extends SpecialMenu{
-	private String city;
+public class LocalSpecial extends Menu{
+	private String Origin, Characteristic;
+	public LocalSpecial(Integer menuID, Integer price, String name, String availableOn, String origin,
+			String characteristic) {
+		super(menuID, price, name, availableOn);
+		Origin = origin;
+		Characteristic = characteristic;
+	}
+	public String getOrigin() {
+		return Origin;
+	}
+	public void setOrigin(String origin) {
+		Origin = origin;
+	}
+	public String getCharacteristic() {
+		return Characteristic;
+	}
+	public void setCharacteristic(String characteristic) {
+		Characteristic = characteristic;
+	}
 	
-	public LocalSpecial(Integer id,Integer price, String name,String city,String story) {
-		super(id,price,name,story);
-		this.city = city;
-	}
-
-	public synchronized String getCity() {
-		return city;
-	}
-
-	public synchronized void setCity(String city) {
-		this.city = city;
-	}
 }

@@ -2,20 +2,16 @@ package main;
 
 import java.util.Scanner;
 
-import view.login;
+import model.CurrentUser;
+import view.Login;
+import view.Register;
 
 public class Main {
-	public static Scanner scan = new Scanner(System.in);
-	
-	public static void cls() {
-		for (int i = 0; i <50; i++) {
-			System.out.println();
-		}
-	}
-	
+	static Scanner scan = ObjectsAndFunctions.getScanner();
 	public Main() {
 		int Choice = 0;
 		do {
+			ObjectsAndFunctions.cls();
 			System.out.println("LaperAh RestoManagement");
 			System.out.println("=======================");
 			System.out.println("1. Login");
@@ -25,13 +21,14 @@ public class Main {
 			try {
 				Choice = scan.nextInt();
 				scan.nextLine();
+				ObjectsAndFunctions.cls();
 				switch (Choice) {
 				case 1:
-					login.loginPage();
+					Login.loginPage();
 					break;
 
 				case 2:
-					
+					Register.registerPage();
 					break;
 				}
 			} catch (Exception e) {

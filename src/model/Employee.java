@@ -1,30 +1,46 @@
 package model;
 
 public class Employee {
-	private Integer employeeID;
-	private String employeeName,restaurantLocation;
-	public Employee(Integer employeeID, String employeeName,String restaurantLocation) {
-		this.employeeID = employeeID;
-		this.employeeName = employeeName;
-		this.restaurantLocation = restaurantLocation;
+	private Integer EmployeeID,BranchID;
+	private String EmployeeName,EmployeeEmail,EmployeePassword;
+	public Employee(Integer employeeID, Integer branchID, String employeeName, String employeeEmail,
+			String employeePassword) {
+		super();
+		EmployeeID = employeeID;
+		BranchID = branchID;
+		EmployeeName = employeeName;
+		EmployeeEmail = employeeEmail;
+		EmployeePassword = employeePassword;
 	}
-	public synchronized Integer getEmployeeID() {
-		return employeeID;
+	public Integer getEmployeeID() {
+		return EmployeeID;
 	}
-	public synchronized void setEmployeeID(Integer employeeID) {
-		this.employeeID = employeeID;
+	public void setEmployeeID(Integer employeeID) {
+		EmployeeID = employeeID;
 	}
-	public synchronized String getEmployeeName() {
-		return employeeName;
+	public Integer getBranchID() {
+		return BranchID;
 	}
-	public synchronized void setEmployeeName(String employeeName) {
-		this.employeeName = employeeName;
+	public void setBranchID(Integer branchID) {
+		BranchID = branchID;
 	}
-	public synchronized String getRestaurantLocation() {
-		return restaurantLocation;
+	public String getEmployeeName() {
+		return EmployeeName;
 	}
-	public synchronized void setRestaurantLocation(String restaurantLocation) {
-		this.restaurantLocation = restaurantLocation;
+	public void setEmployeeName(String employeeName) {
+		EmployeeName = employeeName;
 	}
-
+	public String getEmployeeEmail() {
+		return EmployeeEmail;
+	}
+	public void setEmployeeEmail(String employeeEmail) {
+		EmployeeEmail = employeeEmail;
+	}
+	public String getEmployeePassword() {
+		return EmployeePassword;
+	}
+	public void setEmployeePassword(String employeePassword) {
+		EmployeePassword = employeePassword;
+	}
+	
 }
