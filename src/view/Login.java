@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import controller.Connect;
 import controller.Queries;
-import main.Main;
+
 import main.ObjectsAndFunctions;
 import model.CurrentUser;
 

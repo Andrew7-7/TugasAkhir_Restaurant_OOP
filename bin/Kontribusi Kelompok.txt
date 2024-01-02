@@ -9,4 +9,3 @@
 2602084640-Andrew
 - Normalisasi
 - Membuat create+insert.sql
-- Modify Menu(CRUD)
