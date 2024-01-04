@@ -1,5 +1,5 @@
-TugasAkhir.docx
-.classpath
-/view/
-/menuController/
+/controller/
 /main/
+/menuController/
+/model/
+/view/
