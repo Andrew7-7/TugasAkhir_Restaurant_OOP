@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import main.ObjectsAndFunctions;
 import model.CurrentUser;
+import menuController.CheckOrderedMenu;
+import menuController.ShowAllOrders;
 
 public class MainMenu {
 	static Scanner scan = ObjectsAndFunctions.getScanner();
@@ -19,13 +21,14 @@ public class MainMenu {
 			choices = scan.nextInt();
 			scan.nextLine();
 		} catch (Exception e) {
+			scan.nextLine();
 		}
 		switch (choices) {
 		case 1:
-			
+			ShowAllOrders.inReserve();
 			break;
 		case 2:
-			
+			ShowAllOrders.inOrder();
 			break;
 		case 3:
 			ModifyMenu.ModifyMenuPage();
