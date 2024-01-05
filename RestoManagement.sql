@@ -37,11 +37,15 @@ CREATE TABLE MsEmployee (
 
 CREATE TABLE TransactionDetail (
     OrderID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    EmployeeID INT,
+	TableTypeID INT NOT NULL,
     ReservedTime DATETIME NOT NULL,
-    ReservationStatus VARCHAR(20) NOT NULL,
+    EmployeeID INT,
 	CustomerName VARCHAR(225) NOT NULL,
-    FOREIGN KEY (EmployeeID) REFERENCES MsEmployee(EmployeeID)
+    ReservationStatus VARCHAR(20) NOT NULL,
+    TableQuantity INT NOT NULL,
+    TotalPeopleReserved INT,
+    FOREIGN KEY (EmployeeID) REFERENCES MsEmployee(EmployeeID),
+    FOREIGN KEY (TableTypeID) REFERENCES MsTableType(TableTypeID)
 );
 
 CREATE TABLE TransactionHeader (
@@ -49,12 +53,8 @@ CREATE TABLE TransactionHeader (
     MenuID INT NOT NULL,
     PRIMARY KEY (OrderID, MenuID),
     MenuQuantity INT NOT NULL,
-    TableTypeID INT NOT NULL,
-    TableQuantity INT NOT NULL,
-    TotalPeopleReserved INT,
     FOREIGN KEY (OrderID) REFERENCES TransactionDetail(OrderID),
-    FOREIGN KEY (MenuID) REFERENCES MsMenu(MenuID),
-    FOREIGN KEY (TableTypeID) REFERENCES MsTableType(TableTypeID)
+    FOREIGN KEY (MenuID) REFERENCES MsMenu(MenuID)
 );
 
 DELIMITER //
@@ -137,16 +137,16 @@ INSERT INTO MsEmployee(BranchID, EmployeeName, EmployeeEmail, EmployeePassword) 
 INSERT INTO MsEmployee(BranchID, EmployeeName, EmployeeEmail, EmployeePassword) VALUES (5, 'Joko','Joko@gmail.com', 'Joko123');
 INSERT INTO MsEmployee(BranchID, EmployeeName, EmployeeEmail, EmployeePassword) VALUES (6, 'Reno','Reno@gmail.com', 'Reno123');
 
-INSERT INTO TransactionDetail(OrderID, EmployeeID, CustomerName, ReservedTime, ReservationStatus) VALUES (1, 1,'Andrew' ,'2020-01-12 11:00:00', 'Finalized');
-INSERT INTO TransactionDetail(OrderID, EmployeeID, CustomerName, ReservedTime, ReservationStatus) VALUES (2, 2, 'Charles','2020-01-13 11:00:00', 'Finalized');
-INSERT INTO TransactionDetail(OrderID, EmployeeID, CustomerName, ReservedTime, ReservationStatus) VALUES (3, 3, 'Jarit','2020-01-15 11:00:00', 'Finalized');
-INSERT INTO TransactionDetail(OrderID, EmployeeID, CustomerName, ReservedTime, ReservationStatus) VALUES (4, 4, 'Jessica' ,'2020-01-20 11:00:00', 'Finalized');
+INSERT INTO TransactionDetail(OrderID, TableTypeID, ReservedTime, EmployeeID, CustomerName, ReservationStatus, TableQuantity, TotalPeopleReserved) VALUES (1, 1 ,'2020-01-12 11:00:00', 1,'Andrew', 'Finalized', 1, 2);
+INSERT INTO TransactionDetail(OrderID, TableTypeID, ReservedTime, EmployeeID, CustomerName, ReservationStatus, TableQuantity, TotalPeopleReserved) VALUES (2, 3 ,'2020-01-13 11:00:00', 2,'Charles', 'Finalized', 1, 8);
+INSERT INTO TransactionDetail(OrderID, TableTypeID, ReservedTime, EmployeeID, CustomerName, ReservationStatus, TableQuantity, TotalPeopleReserved) VALUES (3, 3 ,'2020-01-15 11:00:00', 3,'Jarjit', 'Finalized', 2, 17);
+INSERT INTO TransactionDetail(OrderID, TableTypeID, ReservedTime, EmployeeID, CustomerName, ReservationStatus, TableQuantity, TotalPeopleReserved) VALUES (4, 2 ,'2020-01-20 11:00:00', 4,'Jarjit', 'Finalized', 1, 4);
 
-INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity, TableTypeID, TableQuantity, TotalPeopleReserved) VALUES (1, 1, 1, 1, 1, 2);
-INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity, TableTypeID, TableQuantity, TotalPeopleReserved) VALUES (2, 2, 2, 2, 1, 4);
-INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity, TableTypeID, TableQuantity, TotalPeopleReserved) VALUES (2, 3, 4, 3, 1, 8);
-INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity, TableTypeID, TableQuantity, TotalPeopleReserved) VALUES (2, 4, 3, 3, 1, 8);
-INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity, TableTypeID, TableQuantity, TotalPeopleReserved) VALUES (3, 5, 4, 3, 2, 17);
-INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity, TableTypeID, TableQuantity, TotalPeopleReserved) VALUES (3, 6, 28, 3, 2, 17);
-INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity, TableTypeID, TableQuantity, TotalPeopleReserved) VALUES (4, 7, 2, 1, 2, 4);
-INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity, TableTypeID, TableQuantity, TotalPeopleReserved) VALUES (4, 8, 4, 2, 1, 4);
+INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity) VALUES (1, 1, 1);
+INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity) VALUES (2, 2, 2);
+INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity) VALUES (2, 3, 4);
+INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity) VALUES (2, 4, 3);
+INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity) VALUES (3, 5, 4);
+INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity) VALUES (3, 6, 28);
+INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity) VALUES (4, 7, 2);
+INSERT INTO TransactionHeader(OrderID, MenuID, MenuQuantity) VALUES (4, 8, 4);

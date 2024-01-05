@@ -22,16 +22,20 @@ public class ShowAllOrders {
 		try {
 			ResultSet orderResult = Queries.StartQuery("SELECT * "
 					+ "FROM transactiondetail "
-					+ "WHERE ReservationStatus = 'In reserve' "
+					+ "WHERE ReservationStatus = 'In Reserve' "
 					+ "AND EmployeeID = '" + CurrentUser.getEmployeeID() + "' ");
 			while(orderResult.next()) {
 				Integer OrderID = orderResult.getInt("OrderID");
-				Integer EmployeeID = orderResult.getInt("EmployeeID");
+				Integer TableTypeID = orderResult.getInt("TableTypeID");
 				Date Time = orderResult.getDate("ReservedTime");
 				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 				String ReservedTime = dateFormat.format(Time);
+				Integer EmployeeID = orderResult.getInt("EmployeeID");
+				String CustomerName = orderResult.getString("CustomerName");
 				String ReservationStatus = orderResult.getString("ReservationStatus");
-				orders.add(new Order(OrderID, EmployeeID, ReservedTime, ReservationStatus));
+				Integer TableQuantity = orderResult.getInt("TableQuantity");
+				Integer TotalPeopleReserved = orderResult.getInt("TotalPeopleReserved");
+				orders.add(new Order(OrderID, TableTypeID, ReservedTime, EmployeeID, CustomerName, ReservationStatus, TableQuantity, TotalPeopleReserved));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -51,12 +55,16 @@ public class ShowAllOrders {
 					+ "AND EmployeeID = '" + CurrentUser.getEmployeeID() + "' ");
 			while(orderResult.next()) {
 				Integer OrderID = orderResult.getInt("OrderID");
-				Integer EmployeeID = orderResult.getInt("EmployeeID");
+				Integer TableTypeID = orderResult.getInt("TableTypeID");
 				Date Time = orderResult.getDate("ReservedTime");
 				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 				String ReservedTime = dateFormat.format(Time);
+				Integer EmployeeID = orderResult.getInt("EmployeeID");
+				String CustomerName = orderResult.getString("CustomerName");
 				String ReservationStatus = orderResult.getString("ReservationStatus");
-				orders.add(new Order(OrderID, EmployeeID, ReservedTime, ReservationStatus));
+				Integer TableQuantity = orderResult.getInt("TableQuantity");
+				Integer TotalPeopleReserved = orderResult.getInt("TotalPeopleReserved");
+				orders.add(new Order(OrderID, TableTypeID, ReservedTime, EmployeeID, CustomerName, ReservationStatus, TableQuantity, TotalPeopleReserved));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
