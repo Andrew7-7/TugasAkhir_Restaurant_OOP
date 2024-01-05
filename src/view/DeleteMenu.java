@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import controller.Queries;
+import controller.menuController.CheckOrderedMenu;
 import main.ObjectsAndFunctions;
-import menuController.CheckOrderedMenu;
 import model.menu.Menu;
 
 public class DeleteMenu {

@@ -6,6 +6,7 @@
 2602117512 - Charles Widjaja Tjung
 - Normalisasi
 - Membuat create+insert.sql
+- Order(CRUD)
 2602084640-Andrew
 - Normalisasi
 - Membuat create+insert.sql

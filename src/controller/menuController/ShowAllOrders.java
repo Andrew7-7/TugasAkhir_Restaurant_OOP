@@ -1,4 +1,4 @@
-package menuController;
+package controller.menuController;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

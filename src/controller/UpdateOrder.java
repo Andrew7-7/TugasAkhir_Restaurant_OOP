@@ -2,9 +2,9 @@ package controller;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import menuController.*;
 import java.util.Scanner;
 
+import controller.menuController.*;
 import main.ObjectsAndFunctions;
 
 public class UpdateOrder {

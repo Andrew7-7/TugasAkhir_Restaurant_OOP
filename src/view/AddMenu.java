@@ -3,8 +3,8 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import controller.Queries;
+import controller.menuController.CheckMenuName;
 import main.ObjectsAndFunctions;
-import menuController.CheckMenuName;
 import model.CurrentUser;
 
 public class AddMenu {

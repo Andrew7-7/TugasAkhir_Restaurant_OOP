@@ -3,8 +3,8 @@ package controller;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import controller.menuController.ShowAllOrders;
 import main.ObjectsAndFunctions;
-import menuController.ShowAllOrders;
 
 public class EndOrder {
 

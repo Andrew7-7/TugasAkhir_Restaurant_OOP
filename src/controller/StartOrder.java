@@ -3,8 +3,8 @@ package controller;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import controller.menuController.*;
 import main.ObjectsAndFunctions;
-import menuController.*;
 
 public class StartOrder {
 	static Scanner scan = ObjectsAndFunctions.getScanner();

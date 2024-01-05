@@ -7,14 +7,15 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
+
+import controller.menuController.ShowAllMenu;
+import controller.menuController.ShowAllOrders;
 import view.MainMenu;
 import view.ModifyMenu;
 import main.ObjectsAndFunctions;
 import model.CurrentUser;
 import model.Order;
 import model.menu.Menu;
-import menuController.ShowAllMenu;
-import menuController.ShowAllOrders;
 
 public class MakeOrder {
 	static ArrayList<Menu> menus = ModifyMenu.menus;
@@ -63,9 +64,11 @@ public class MakeOrder {
 		if(TotalPeopleReserved % MaxLoad != 0) {
 			TableQuantity += 1;
 		}
+		ObjectsAndFunctions.cls();
 		String pick = null;
 		System.out.printf("|%-15s|%-20s|%-15s|%-25s|\n", "Table Type ID", "Customer Name", "Table Quantity", "Total People Reserved");
 		System.out.printf("|%-15d|%-20s|%-15d|%-25d|\n", TableTypeID, CustomerName, TableQuantity, TotalPeopleReserved);
+		System.out.println("================================================================================");
 		ShowAllMenu.ShowAllMenus();
 		try {
 			Queries.UpdateQueries(String.format(
@@ -79,7 +82,7 @@ public class MakeOrder {
 		do {
 			int chosenMenuID;
 			do {
-				System.out.print("Choose a menu (enter Menu ID): ");
+				System.out.print("Choose a menu (enter index for example first menu come out type 1 etc): ");
 				try {
 					chosenMenuID = scan.nextInt();
 					scan.nextLine();

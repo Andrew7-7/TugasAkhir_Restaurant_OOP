@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import controller.Queries;
+import controller.menuController.CheckMenuName;
+import controller.menuController.CheckOrderedMenu;
 import main.ObjectsAndFunctions;
-import menuController.CheckMenuName;
-import menuController.CheckOrderedMenu;
 import model.menu.LocalSpecial;
 import model.menu.Menu;
 import model.menu.SpecialMenu;

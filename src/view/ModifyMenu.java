@@ -2,8 +2,9 @@ package view;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import controller.menuController.ShowAllMenu;
 import main.ObjectsAndFunctions;
-import menuController.ShowAllMenu;
 import model.menu.Menu;
 
 public class ModifyMenu {
