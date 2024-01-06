@@ -17,6 +17,7 @@ public class ShowAllHeaders {
 		+ "FROM transactiondetail td "
 		+ "JOIN transactionheader th ON th.OrderID = td.OrderID "
 		+ "WHERE EmployeeID = '" + CurrentUser.getEmployeeID() + "' "
+		+ "AND ReservationStatus = 'In Reserve'"
 					);
 		while(transactionResult.next()) {
 			Integer OrderID = transactionResult.getInt("OrderID");

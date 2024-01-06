@@ -49,16 +49,15 @@ public class UpdateOrder {
 	}
 	
 	public static boolean isInReservation(int orderID) throws SQLException {
-	    // Check if the ReservationStatus is "In Reservation" in TransactionDetail
 	    String query = "SELECT ReservationStatus FROM TransactionDetail " +
 	                   "WHERE OrderID = " + orderID;
 
 	    try (ResultSet resultSet = Queries.StartQuery(query)) {
 	        if (resultSet.next()) {
 	            String reservationStatus = resultSet.getString("ReservationStatus");
-	            return "In Reservation".equals(reservationStatus);
+	            return "In Reserve".equals(reservationStatus);
 	        }
-	        return false;  // OrderID not found
+	        return false;
 	    }
 	}
 

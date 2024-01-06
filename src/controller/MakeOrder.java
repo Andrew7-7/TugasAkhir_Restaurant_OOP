@@ -65,11 +65,10 @@ public class MakeOrder {
 			TableQuantity += 1;
 		}
 		ObjectsAndFunctions.cls();
-		String pick = null;
+		
 		System.out.printf("|%-15s|%-20s|%-15s|%-25s|\n", "Table Type ID", "Customer Name", "Table Quantity", "Total People Reserved");
 		System.out.printf("|%-15d|%-20s|%-15d|%-25d|\n", TableTypeID, CustomerName, TableQuantity, TotalPeopleReserved);
 		System.out.println("================================================================================");
-		ShowAllMenu.ShowAllMenus();
 		try {
 			Queries.UpdateQueries(String.format(
 			        "INSERT INTO TransactionDetail (TableTypeID, ReservedTime, EmployeeID, CustomerName, ReservationStatus, TableQuantity, TotalPeopleReserved) " +
@@ -78,45 +77,6 @@ public class MakeOrder {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
-		do {
-			int chosenMenuID;
-			do {
-				System.out.print("Choose a menu (enter index for example first menu come out type 1 etc): ");
-				try {
-					chosenMenuID = scan.nextInt();
-					scan.nextLine();
-				} catch (Exception e) {
-					scan.nextLine();
-					chosenMenuID = -1;
-				}
-			} while (chosenMenuID < 1 || chosenMenuID > menus.size());
-			Menu chosenMenu = menus.get(chosenMenuID - 1);
-			System.out.printf("Chosen Menu: %d%n", chosenMenu.getMenuID());
-			
-			int quantity;
-			do {
-				System.out.print("Enter quantity: ");
-				try {
-					quantity = scan.nextInt();
-					scan.nextLine();
-				} catch (Exception e) {
-					scan.nextLine();
-					quantity = -1;
-				}
-			} while (quantity < 1);
-			
-			try {
-				Queries.UpdateQueries(String.format(
-				        "INSERT INTO TransactionHeader (OrderID, MenuID, MenuQuantity) " +
-				        "VALUES (LAST_INSERT_ID(), %d, %d);", chosenMenu.getMenuID(), quantity));
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			
-			System.out.print("Do you want to order another menu (y/n): ");
-	        pick = scan.nextLine();
-		}while(pick.equals("y"));
 	}
 
 }
